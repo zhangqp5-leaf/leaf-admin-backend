@@ -21,17 +21,28 @@ app.use(jwt({
   path: ['/api/admin/base/open/captcha', '/api/admin/base/open/login', /^\/static\/.*/] //不需要token验证的请求
 }));
 
+// static
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('@', express.static(path.join(__dirname)));
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-console.log(2);
 app.use('/api', require('./routes/login/login'));
 app.use('/api', require('./routes/login/verifyCode'));
 app.use('/api', require('./routes/login/currentUser'));
 app.use('/api', require('./routes/login/logout'));
+app.use('/api', require('./routes/login/updatePerson'));
+app.use('/api', require('./routes/file_space/classiFyList'));
+app.use('/api', require('./routes/file_space/addClassify'));
+app.use('/api', require('./routes/file_space/updateClassify'));
+app.use('/api', require('./routes/file_space/deleteClassify'));
+app.use('/api', require('./routes/file_space/fileList'));
+app.use('/api', require('./routes/file_space/uploadFile'));
+app.use('/api', require('./routes/file_space/addFile'));
+app.use('/api', require('./routes/file_space/deleteFile'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,13 +51,15 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  console.log('err', err);
+  res.status(err.status || 500).json({msg: err.msg});
   // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.msg = err.msg;
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  // // render the error page
+  // res.status(err.status || 500);
+  // res.render('error');
 });
 
 module.exports = app;
