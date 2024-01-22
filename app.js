@@ -30,11 +30,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/api', require('./routes/login/login'));
-app.use('/api', require('./routes/login/verifyCode'));
-app.use('/api', require('./routes/login/currentUser'));
-app.use('/api', require('./routes/login/logout'));
-app.use('/api', require('./routes/login/updatePerson'));
+app.use('/api', require('./routes/user/login'));
+app.use('/api', require('./routes/user/verifyCode'));
+app.use('/api', require('./routes/user/currentUser'));
+app.use('/api', require('./routes/user/logout'));
+app.use('/api', require('./routes/user/updatePerson'));
 app.use('/api', require('./routes/file_space/classiFyList'));
 app.use('/api', require('./routes/file_space/addClassify'));
 app.use('/api', require('./routes/file_space/updateClassify'));
@@ -43,6 +43,7 @@ app.use('/api', require('./routes/file_space/fileList'));
 app.use('/api', require('./routes/file_space/uploadFile'));
 app.use('/api', require('./routes/file_space/addFile'));
 app.use('/api', require('./routes/file_space/deleteFile'));
+app.use('/api', require('./routes/home/getHomeData'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
