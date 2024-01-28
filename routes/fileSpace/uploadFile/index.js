@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const multer =require('multer');
-const { successResponse, failResponse } = require('../../../utils/const');
 
 // 配置multer的diskStorage存储方式
 const storage = multer.diskStorage({
@@ -22,16 +21,10 @@ const upload = multer({ storage: storage });
 router.post('/admin/base/comm/upload', upload.single('file'), function (req, res, next) {
   const file = req.file
   if (!file) {
-    return res.status(500).send({
-      ...failResponse,
-      msg: '请选择文件',
-    });
+    return res.jsonFail(500, '请选择文件');
   }
-  res.status(200).send({
-    ...successResponse,
-    data: {
-      url: `http://192.168.2.181:2119/static/images/${file.filename}`,
-    },
+  res.jsonSuccess({
+    url: `http://192.168.2.181:2119/static/images/${file.filename}`,
   });
 });
 

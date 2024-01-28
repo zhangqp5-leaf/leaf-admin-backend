@@ -43,15 +43,19 @@ app.use('/api', require('./routes/user/verifyCode'));
 app.use('/api', require('./routes/user/currentUser'));
 app.use('/api', require('./routes/user/logout'));
 app.use('/api', require('./routes/user/updatePerson'));
-app.use('/api', require('./routes/file_space/classiFyList'));
-app.use('/api', require('./routes/file_space/addClassify'));
-app.use('/api', require('./routes/file_space/updateClassify'));
-app.use('/api', require('./routes/file_space/deleteClassify'));
-app.use('/api', require('./routes/file_space/fileList'));
-app.use('/api', require('./routes/file_space/uploadFile'));
-app.use('/api', require('./routes/file_space/addFile'));
-app.use('/api', require('./routes/file_space/deleteFile'));
+app.use('/api', require('./routes/fileSpace/classiFyList'));
+app.use('/api', require('./routes/fileSpace/addClassify'));
+app.use('/api', require('./routes/fileSpace/updateClassify'));
+app.use('/api', require('./routes/fileSpace/deleteClassify'));
+app.use('/api', require('./routes/fileSpace/fileList'));
+app.use('/api', require('./routes/fileSpace/uploadFile'));
+app.use('/api', require('./routes/fileSpace/addFile'));
+app.use('/api', require('./routes/fileSpace/deleteFile'));
 app.use('/api', require('./routes/home/getHomeData'));
+app.use('/api', require('./routes/crud/getDemoUserList'));
+app.use('/api', require('./routes/crud/addDemoUser'));
+app.use('/api', require('./routes/crud/deleteDemoUser'));
+app.use('/api', require('./routes/crud/updateDemoRule'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
