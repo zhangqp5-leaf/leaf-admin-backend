@@ -6,6 +6,7 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "8",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
@@ -14,11 +15,14 @@
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
+    "mongoose": "^8.1.1",
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.6.5",
     "nodemon": "^3.0.2",
     "pug": "2.0.0-beta11",
+    "redis": "^4.6.12",
+    "socket.io": "^4.7.4",
     "svg-captcha": "^1.4.0"
   }
 }

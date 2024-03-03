@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const { camelCase } = require('lodash');
 
 const snakeCaseToCamelCase = (obj) => {
@@ -18,6 +20,26 @@ const snakeCaseToCamelCase = (obj) => {
   return obj;
 };
 
+const getAllRouteDirs = (tempPath='./routes') => {
+
+  const items = fs.readdirSync(tempPath);
+  let res = [];
+  // 遍历当前目录中所有的文件和文件夹
+  items.map(item => {
+    let temp = path.join(tempPath, item);
+    if (item === 'index.js') {
+      const _path = './' + tempPath.replaceAll('\\', '/');
+      res.push(_path);
+    }
+    // 若当前的为文件夹
+    if( fs.statSync(temp).isDirectory() ){
+      res = [ ...res, ...getAllRouteDirs( temp ) ];
+    }
+  });
+  return res;
+}
+
 module.exports = {
   snakeCaseToCamelCase,
+  getAllRouteDirs,
 };
