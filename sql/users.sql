@@ -11,7 +11,7 @@
  Target Server Version : 80033 (8.0.33)
  File Encoding         : 65001
 
- Date: 25/01/2024 23:48:34
+ Date: 12/03/2024 22:39:23
 */
 
 SET NAMES utf8mb4;
@@ -22,20 +22,23 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
-  `userid` int NOT NULL AUTO_INCREMENT COMMENT '主键userid',
-  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户名',
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户密码',
-  `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户角色',
-  `headImg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户头像',
-  `nickname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户昵称',
-  PRIMARY KEY (`userid`) USING BTREE,
-  CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `userinfo` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '用户主表' ROW_FORMAT = Dynamic;
+  `userid` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `headImg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nickname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`userid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '1234', 'admin', 'http://192.168.2.181:2119/static/images/wallhaven-eyp66k.png', '超级管理员');
-INSERT INTO `users` VALUES (3, 'user', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '游客');
+INSERT INTO `users` VALUES (1, 'admin', '1234', 'admin', 'http://192.168.2.181:2119/static/images/Snipaste_2022-07-21_14-41-49.jpg', '超级管理员');
+INSERT INTO `users` VALUES (3, 'user', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2022-07-21_14-41-49.jpg', '游客');
+INSERT INTO `users` VALUES (4, 'yilei', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '易磊');
+INSERT INTO `users` VALUES (6, 'gaojuan', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '高娟');
+INSERT INTO `users` VALUES (7, 'chengxiulan', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '程秀兰');
+INSERT INTO `users` VALUES (8, 'yujun', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '于军');
 
 SET FOREIGN_KEY_CHECKS = 1;

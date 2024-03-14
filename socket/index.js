@@ -20,7 +20,7 @@ const createSocketConnection = (io) => {
     socket.on('chat', async (data) => {
       await esClient.index({
         index: 'leaf_chat',
-        document: data,
+        body: data,
       });
       await esClient.indices.refresh({ index: 'leaf_chat' });
       const searchResult = await getChatList(data);
@@ -74,7 +74,7 @@ const getChatList = async (data) => {
       size: 100,
     }
   });
-  return searchResult.hits.hits;
+  return searchResult.body.hits.hits;
 }
 
 module.exports = createSocketConnection;
