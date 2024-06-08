@@ -41,8 +41,17 @@ const esClient = new Client({
   // auth: {
   //   apiKey: 'aEdWemFvMEItUXU3dllBLWQxR2g6TE10NDktU09RRkNkd1JxaGpiZFd6UQ=='
   // }
+  auth: {
+    username: 'elastic', // 例如 'elastic'
+    password: 'VKIH1AWTfl32EBw9dVsL',   // 之前 `elasticsearch-setup-passwords` 时设置的密码
+  },
 });
-
+// esClient.indices.create({
+//   index: 'leaf_chat'
+// }, (err, resp) => {
+//   if (err) console.error(err)
+//   else console.log("Create Index:", resp)
+// })
 // mongoose.connect(uri)
 //   .then(() => {
 //     console.log('Connected to MongoDB');
@@ -57,3 +66,24 @@ module.exports = {
   esClient,
 };
 
+
+// Changed password for user apm_system
+// PASSWORD apm_system = zEBpmdZKt8Nnf0wPW6r4
+
+// Changed password for user kibana_system
+// PASSWORD kibana_system = rWlZd8vFoF7aKEnlUAqo
+
+// Changed password for user kibana
+// PASSWORD kibana = rWlZd8vFoF7aKEnlUAqo
+
+// Changed password for user logstash_system
+// PASSWORD logstash_system = 4bMCgUSYNZTlxQz3B2u9
+
+// Changed password for user beats_system
+// PASSWORD beats_system = Abafm8IaYKfa4Va3ChHU
+
+// Changed password for user remote_monitoring_user
+// PASSWORD remote_monitoring_user = uQZ4ZJM49ruF6JXfTdwS
+
+// Changed password for user elastic
+// PASSWORD elastic = VKIH1AWTfl32EBw9dVsL

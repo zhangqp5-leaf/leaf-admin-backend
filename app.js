@@ -51,7 +51,7 @@ app.use(function(err, req, res, next) {
 
 const io = new Server(1921, {
   cors: {
-    origin: ['http://localhost:8000'],
+    origin: "*",
     credentials: true
   }
 });
