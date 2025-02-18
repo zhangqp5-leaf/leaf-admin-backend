@@ -1,11 +1,9 @@
 const jwt = require('jsonwebtoken');
 
 const verifyToken = (req, res, next) => {
-  // 获取token
-  const token = req.headers.authorization.split(' ')[1];
 
   // 排除不需要验证的路由
-  const excludedRoutes = ['/api/admin/base/open/captcha', '/api/admin/base/open/login', /^\/static\/.*/];
+  const excludedRoutes = ['/api/admin/base/open/captcha', '/api/admin/base/open/login', '/api/chat/info', /^\/static\/.*/];
   const isExcluded = excludedRoutes.some(route => {
     if (route instanceof RegExp) {
       return route.test(req.originalUrl);
@@ -16,6 +14,9 @@ const verifyToken = (req, res, next) => {
   if (isExcluded) {
     return next();
   }
+  
+  // 获取token
+  const token = req.headers.authorization.split(' ')[1];
   
   if (!token) {
     return res.status(401).send({ message: 'No token provided' });
