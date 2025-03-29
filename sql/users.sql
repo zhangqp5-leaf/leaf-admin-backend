@@ -34,11 +34,11 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '1234', 'admin', 'http://192.168.2.181:2119/static/images/Snipaste_2022-07-21_14-41-49.jpg', '超级管理员');
-INSERT INTO `users` VALUES (3, 'user', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2022-07-21_14-41-49.jpg', '游客');
-INSERT INTO `users` VALUES (4, 'yilei', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '易磊');
-INSERT INTO `users` VALUES (6, 'gaojuan', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '高娟');
-INSERT INTO `users` VALUES (7, 'chengxiulan', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '程秀兰');
-INSERT INTO `users` VALUES (8, 'yujun', '1234', 'user', 'http://192.168.2.181:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '于军');
+INSERT INTO `users` VALUES (1, 'admin', '1234', 'admin', 'http://118.31.168.157:2119/static/images/Snipaste_2022-07-21_14-41-49.jpg', '超级管理员');
+INSERT INTO `users` VALUES (3, 'user', '1234', 'user', 'http://118.31.168.157:2119/static/images/Snipaste_2022-07-21_14-41-49.jpg', '游客');
+INSERT INTO `users` VALUES (4, 'yilei', '1234', 'user', 'http://118.31.168.157:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '易磊');
+INSERT INTO `users` VALUES (6, 'gaojuan', '1234', 'user', 'http://118.31.168.157:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '高娟');
+INSERT INTO `users` VALUES (7, 'chengxiulan', '1234', 'user', 'http://118.31.168.157:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '程秀兰');
+INSERT INTO `users` VALUES (8, 'yujun', '1234', 'user', 'http://118.31.168.157:2119/static/images/Snipaste_2024-01-01_12-47-41.jpg', '于军');
 
 SET FOREIGN_KEY_CHECKS = 1;
